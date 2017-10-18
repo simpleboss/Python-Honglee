@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="mmm2.c">
+    <ClCompile Include="oddddo.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
