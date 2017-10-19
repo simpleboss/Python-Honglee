@@ -2,7 +2,6 @@
 int main() {
 	int i,n, nb_measure;
 	nb_measure = 0;
-	printf("test");
 	scanf("%d", &n);
 
 	for (i = 1; i <= n; i++) {
@@ -10,12 +9,14 @@ int main() {
 			nb_measure++;
 		}
 	}
-	if ((2 * nb_measure + 1) % 2 == 1) {
+//	printf("nb_measure = %d\n", nb_measure);
+
+	if ( nb_measure  % 2 == 1) {
 		printf("yes");
 	}
 	else {
 		printf("no");
 	}
-
+	scanf("%d", &i);
 	return 0;
 }
