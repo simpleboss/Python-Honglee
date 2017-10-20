@@ -10,17 +10,18 @@ int main() {
 		second = temp;
 	}
 
+	if (first > third) {
+		temp = first;
+		first = third;
+		third = temp;
+	}
+
 	if (second > third) {
 		temp = second;
 		second = third;
 		third = temp;
 	}
 
-	if (first > third) {
-		temp = first;
-		first = third;
-		third = temp;
-	}
 	//printf("first second third = %d %d %d \n", first, second, third);
 	d1 = second - first;
 	d2 = third - second;
