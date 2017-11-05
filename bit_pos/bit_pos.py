@@ -1,16 +1,21 @@
-num = raw_input()
+test = input()
 
 
-def binary(num):
+def binary(numbers):
     result = []
     index = []
-    while num < 1:
-        result.append(num % 2)
-        num = num // 2
-    for i in result:
+    while numbers > 0:
+        result.append(numbers % 2)
+        numbers = numbers // 2
+
+    i = 0
+    while i < len(result):
         if result[i] == 1:
-            index.append(i)
+            print i,
+            '''index.append(i)'''
         i += 1
-    print index
+
     return index
 
+
+binary(test)
