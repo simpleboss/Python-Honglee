@@ -11,8 +11,7 @@ def parking(number_store):
 
     min_location = min(location_store)
     max_location = max(location_store)
-    print max_location - min_location
-    return max_location - min_location
+    return 2 * (max_location - min_location)
 
 
-parking(test)
+print parking(test)
