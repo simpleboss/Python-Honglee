@@ -12,10 +12,13 @@ def parking(number_store):
         i += 1
 
     avg_location = sum_location / number_store
+    print 'avg_location', avg_location
+    print 'location[0]', location_store[0]
+
     i = 0
     result = 0
-    for i in location_store:
-        result = result + abs(avg_location - location_store)
+    while i < len(location_store):
+        result = result + abs(avg_location - location_store[i])
         i += 1
 
     print result
