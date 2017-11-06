@@ -2,11 +2,14 @@ def speed_limit(n):
     total = 0
     start_time = 0
     i = 1
+    speed2 = []
 
     while i <= n:
-        speed, end_time = map(int, input().split(" "))
-        total = total + (end_time - start_time) * speed
-        start_time = end_time
+        speed = input()
+        speed2.append(speed.split(" "))
+        total = total + (speed(1) - start_time) * speed(0)
+        start_time = speed(1)
+        speed2 = []
         i += 1
 
     print total
