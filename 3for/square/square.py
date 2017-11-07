@@ -4,7 +4,7 @@ def square(left_num, right_num):
     for j in range(left_num, right_num + 1):
         #print 'j = ', j
         i = 1
-        while i <= right_num:
+        while i <= right_num ** 0.5:
             if i * i == j:
                 #print 'i = ', i
                 total_result = total_result + j
@@ -13,9 +13,10 @@ def square(left_num, right_num):
             i += 1
     if min_result == 10001:
         print '-1'
+    else:
+        print total_result
+        print min_result
 
-    print total_result
-    print min_result
     return total_result
 
 
