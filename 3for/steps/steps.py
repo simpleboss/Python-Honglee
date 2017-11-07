@@ -1,7 +1,9 @@
 def step(x, y):
     result = -1
-    if x == y:
-        if x % 4 == 0:
+    if x == 1 and y == 1:
+        result = 1
+    elif x == y:
+        if x % 2 == 0:
             result = x * 2
         else:
             result = x * 2 + 1
@@ -16,6 +18,9 @@ def step(x, y):
         print result
     return result
 
-x = input()
-y = input()
-step(x,y)
+
+num = []
+num = [int(i) for i in raw_input().split(" ")]
+x = num[0]
+y = num[1]
+step(x, y)
