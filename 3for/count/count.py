@@ -18,7 +18,7 @@ def count(num):
         #print 'else if'
         denominator = 1 - (num - total)
         numerator = i + (num - total)
-    print num, ' IS ', denominator, '/', numerator
+    print(str(num) + " IS " + str(denominator) + "/" + str(numerator))
     return total
 
 
