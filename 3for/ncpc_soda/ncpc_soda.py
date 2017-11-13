@@ -9,8 +9,8 @@ def soda(empty, require):
     return total
 
 
-input = []
-input = [int(i) for i in raw_input().split(' ')]
-empty = input(0)
-require = input(1)
+input_list = []
+input_list = [int(i) for i in raw_input().split(' ')]
+empty = input_list(0) + input_list(1)
+require = input_list(2)
 print soda(empty, require)
