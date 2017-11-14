@@ -12,8 +12,8 @@ def cycling(n, input_list):
         left = right
         n += 1
         result = sorted(result)
-        result = reversed(result)
-    return answer[0]
+        #result = reversed(result)
+    return result[0]
 
 
 n = int(raw_input())
