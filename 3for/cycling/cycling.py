@@ -1,19 +1,24 @@
 def cycling(n, input_list):
     range = 0
-    result = []
+    result = [0]
     left = input_list[0]
     for right in input_list:
         if right - left > 0:
             range += right - left
+            #print 'add range', range
         else:
             if range != 0:
                 result.append(range)
+                #print 'append result', result
                 range = 0
         left = right
         n += 1
-        result = sorted(result)
-        #result = reversed(result)
-    return result[0]
+    if range != 0:
+        result.append(range)
+        #print 'append result', result
+        range = 0
+    result = sorted(result)
+    return result[-1]
 
 
 n = int(raw_input())
