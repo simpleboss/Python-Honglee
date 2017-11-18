@@ -1,36 +1,39 @@
-def when(n, input_day_list, k):
+def weeknumber(n, input_day_list, k):
     # get relative date based on input_day_list[0]
     day_list = []
     for i in input_day_list:
         day_list.append(i - input_day_list[0])
-    print day_list
-    # find input_day_list[0]
-    l1 = 1
+    print k
+    # find which i is equal to input_day_list[0]
+    i = 0
+    total = 0
     while i <= 5:
-        l2 = 1
-        while l2 <= 5:
-            if len(input_day_list) >= 3:
-                l3 = 1
-                while l3 <= 5:
-                    if len(input_day_list) >= 4:
-                        l4 = 1
-                        while l4 <= 5:
-                            l4 += 1
-                            if len(input_day_list) >= 5:
-                                l5 = 1
-                                while l5 <= 5:
-                                    l5 += 1
-                                    if len(input_day_list) >= 6:
-                                        l6 = 1
-                                        while l6 <= 5:
-                                            l6 += 1
-                                            if len(input_day_list) >= 7:
-                                                l7 = 1
-                                                while l7 <= 5:
-                                                    l7 += 1
+        if total != k:
+            total = 0
+            for j in day_list:
+                total += j * i
+        else:
+            print 'i', i
+            print 'break'
+            break
+        print 'total', total
+        i += 1
+    line = i - 2
+    return line
 
 
-    return day_list
+def when_input_first_day(day_list, line, k):
+    total_difference = 0
+    for i in day_list:
+        total_difference += i
+    while i <= 31:
+        if n * i + total_difference == k:
+            break
+        else:
+            i += 1
+    day1 = i
+    print 'day1', day1
+    return day1
 
 
 input_list = []
@@ -39,5 +42,6 @@ m = input_list[0]
 n = input_list[1]
 input_day_list = []
 input_day_list = [int(i) for i in raw_input().split(' ')]
-k = raw_input()
-when(n, input_day_list, k)
+k = int(raw_input())
+weeknumber(n, input_day_list, k)
+when_input_first_day(day_list, line, k)
