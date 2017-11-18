@@ -9,9 +9,25 @@ def when(n, input_day_list, k):
     while i <= 5:
         l2 = 1
         while l2 <= 5:
-            l3 = 1
-            while l3 <= 5:
-                total = l1*(day_list[0])
+            if len(input_day_list) >= 3:
+                l3 = 1
+                while l3 <= 5:
+                    if len(input_day_list) >= 4:
+                        l4 = 1
+                        while l4 <= 5:
+                            l4 += 1
+                            if len(input_day_list) >= 5:
+                                l5 = 1
+                                while l5 <= 5:
+                                    l5 += 1
+                                    if len(input_day_list) >= 6:
+                                        l6 = 1
+                                        while l6 <= 5:
+                                            l6 += 1
+                                            if len(input_day_list) >= 7:
+                                                l7 = 1
+                                                while l7 <= 5:
+                                                    l7 += 1
 
 
     return day_list
