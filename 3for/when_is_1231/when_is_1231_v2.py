@@ -3,7 +3,15 @@ def input():
 
 
 def when_is_first_day(n, input_days, sum):
-    pass
+    sum_d = 0
+    for d in input_days:
+        sum_d += d - input_days[0]
+    for day in range(1, 31):
+        if n * day + sum_d == sum:
+            first_day = day
+            return first_day
+        else:
+            print 'No answer'
 
 
 def main():
@@ -18,5 +26,4 @@ def test_for_when_is_first_day(n, input_days, sum):
     print 'test3 for Dec'
     assert (when_is_first_day(5, [0, 1, 4, 6, 7], 24+25+28+29+30) == 24)
     print 'Test Done'
-    pass
 
