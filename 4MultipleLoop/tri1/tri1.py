@@ -3,11 +3,11 @@ def input():
 
 
 def tri1(n):
-    import sys
     for i in range(0, n + 1):
+        a_line = ''
         for j in range(0, i):
-            sys.stdout.write('*')
-        print ''
+            a_line = a_line + '*'
+        print a_line
     return j
 
 
