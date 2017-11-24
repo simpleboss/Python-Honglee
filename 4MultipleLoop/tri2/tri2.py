@@ -3,12 +3,12 @@ def input():
 
 
 def tri2(n):
-    for j in range(n+1, 1):
+    for j in range(n, 0, -1):
         a_line = ''
-        for i in range(i, 0):
+        for i in range(j - 1, -1, -1):
             a_line = a_line + '*'
+            #print 'i =', i
         print a_line
-    return j
 
 
 def main():

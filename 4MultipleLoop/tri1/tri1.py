@@ -7,7 +7,7 @@ def tri1(n):
         a_line = ''
         for j in range(0, i):
             a_line = a_line + '*'
-        print a_line
+print a_line
     return j
 
 
