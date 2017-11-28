@@ -18,13 +18,17 @@ def oscilloscope(n, row):
     while column <= n:
         row[10-column][column] = '*'
         column += 1
-    i = 0
-    while i <= 2 * n:
-        row[10 - n + i][n] = '*'
-        column += 1
-        i += 1
+    # vertical line
+    for j in range(60):
+        if j == n or (j - n) % (2 * n) == 0:
+            i = 0
+            while i <= 2 * n:
+                row[10 - n + i][j] = '*'
+                column += 1
+                i += 1
     # continuous wave
-
+    for i in range(2 * n):
+        row[10 + n - i][n + i] = '*'
 
 
 def output(row):
