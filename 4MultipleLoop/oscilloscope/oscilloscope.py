@@ -4,11 +4,11 @@ def input():
 
 def layout():
     row = []
-    for i in range(21):
+    for i in range(22):
         row.append([])
-    for i in range(21):
+    for i in range(22):
         for j in range(60):
-            row[i].append([''])
+            row[i].append(' ')
     return row
 
 
@@ -16,12 +16,20 @@ def oscilloscope(n, row):
     pass
 
 
-def output(n, row):
-    for i in range(21):
-        output_row = ''
-        for j in range(60):
-            output_row += str(row[i][j])
-        print output_row, '\n'
+def output(row):
+    i = 0
+    while i < 11:
+        print ''.join(row[i]),
+        if i == 0:
+            print '| 10V'
+        else:
+            print '|  ' + str(10 - i) + 'V'
+        i += 1
+    i = 12
+    while i < 23:
+        print ''.join(row[i]),
+        print '| -' + str(i - 11) + 'V'
+        i += 1
 
 
 def main():
@@ -29,15 +37,7 @@ def main():
     n = 5
     row = layout()
     oscilloscope(n, row)
-    #test(n, row)
-    output(n, row)
-
-
-def test(n, row):
-    for i in range(20):
-        print 'row[i]', row[i]
+    output(row)
 
 
 main()
-
-
