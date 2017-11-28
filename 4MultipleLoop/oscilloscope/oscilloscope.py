@@ -13,7 +13,9 @@ def layout():
 
 
 def oscilloscope(n, row):
-    pass
+    for i in range(n):
+        row[11-i][i] = '*'
+
 
 
 def output(row):
@@ -36,7 +38,7 @@ def main():
     #n = int(input())
     n = 5
     row = layout()
-    #oscilloscope(n, row)
+    oscilloscope(n, row)
     output(row)
 
 
