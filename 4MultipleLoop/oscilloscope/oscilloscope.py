@@ -26,7 +26,7 @@ def output(row):
             print '|  ' + str(10 - i) + 'V'
         i += 1
     i = 12
-    while i < 23:
+    while i < 22:
         print ''.join(row[i]),
         print '| -' + str(i - 11) + 'V'
         i += 1
@@ -36,7 +36,7 @@ def main():
     #n = int(input())
     n = 5
     row = layout()
-    oscilloscope(n, row)
+    #oscilloscope(n, row)
     output(row)
 
 
