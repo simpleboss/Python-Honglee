@@ -13,8 +13,17 @@ def layout():
 
 
 def oscilloscope(n, row):
-    for i in range(n):
-        row[11-i][i] = '*'
+    # first wave
+    column = 0
+    while column <= n:
+        row[10-column][column] = '*'
+        column += 1
+    i = 0
+    while i <= 2 * n:
+        row[10 - n + i][n] = '*'
+        column += 1
+        i += 1
+    # continuous wave
 
 
 
@@ -25,12 +34,12 @@ def output(row):
         if i == 0:
             print '| 10V'
         else:
-            print '|  ' + str(10 - i) + 'V'
+            print str(i) + '|  ' + str(10 - i) + 'V'
         i += 1
     i = 12
     while i < 22:
         print ''.join(row[i]),
-        print '| -' + str(i - 11) + 'V'
+        print str(i) + '| -' + str(i - 11) + 'V'
         i += 1
 
 
