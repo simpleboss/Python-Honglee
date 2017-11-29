@@ -31,7 +31,7 @@ def oscilloscope(n, row):
 
     # continuous wave
     j = n
-    while j < 60:
+    while j < 59:
         for k in range(2 * n):
             if j <= 59:
                 row[10 + n - k][j] = '*'
@@ -43,16 +43,19 @@ def oscilloscope(n, row):
 def output(row):
     i = 0
     while i < 11:
-        print ''.join(row[i]),
         if i == 0:
-            print '| 10V'
+            row[i].append('| 10V')
         else:
-            print '|  ' + str(10 - i) + 'V'
+            row[i].append('|  ' + str(10 - i) + 'V')
+        print ''.join(row[i])
         i += 1
     i = 11
     while i < 21:
-        print ''.join(row[i]),
-        print '| -' + str(i - 10) + 'V'
+        if i == 20:
+            row[i].append('|-' + str(i - 10) + 'V')
+        else:
+            row[i].append('| -' + str(i - 10) + 'V')
+        print ''.join(row[i])
         i += 1
 
 
