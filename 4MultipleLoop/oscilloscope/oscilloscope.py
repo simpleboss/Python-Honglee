@@ -19,16 +19,25 @@ def oscilloscope(n, row):
         row[10-column][column] = '*'
         column += 1
     # vertical line
-    for j in range(60):
+    j = n
+    while j <= 60:
         if j == n or (j - n) % (2 * n) == 0:
             i = 0
+            #print 'j', j
             while i <= 2 * n:
                 row[10 - n + i][j] = '*'
-                column += 1
                 i += 1
+        j += 1
+
     # continuous wave
-    for i in range(2 * n):
-        row[10 + n - i][n + i] = '*'
+    j = n
+    while j < 60:
+        for k in range(2 * n):
+            if j <= 59:
+                row[10 + n - k][j] = '*'
+                #print '10+n-k', 10+n-k
+                #print 'j', j
+                j += 1
 
 
 def output(row):
@@ -38,18 +47,17 @@ def output(row):
         if i == 0:
             print '| 10V'
         else:
-            print str(i) + '|  ' + str(10 - i) + 'V'
+            print '|  ' + str(10 - i) + 'V'
         i += 1
-    i = 12
-    while i < 22:
+    i = 11
+    while i < 21:
         print ''.join(row[i]),
-        print str(i) + '| -' + str(i - 11) + 'V'
+        print '| -' + str(i - 10) + 'V'
         i += 1
 
 
 def main():
-    #n = int(input())
-    n = 5
+    n = int(input())
     row = layout()
     oscilloscope(n, row)
     output(row)
