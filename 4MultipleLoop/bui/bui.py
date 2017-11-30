@@ -73,5 +73,5 @@ def main():
     else:
         print_space_odd(n)
 
-
-main()
+if __name__ == '__main__':
+    main()
