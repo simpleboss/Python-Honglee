@@ -48,9 +48,9 @@ def print_space_odd(n):
         print up_line
     # three_star_line
     three_star_line = ''
-    for i in range(n-2):
+    for i in range(n // 2):
         three_star_line += ' '
-    three_star_line += '*'
+    three_star_line += '*  *  *'
     print three_star_line
     # down_line
     for j in range(2):
@@ -62,16 +62,23 @@ def print_space_odd(n):
             down_line += ' '
         down_line += '*'
         print down_line
+    # bottom_line
+    bottom_line = ''
+    for i in range((n + 6) // 2):
+        bottom_line += ' '
+    bottom_line += '*'
+    print bottom_line
 
 
 def main():
-    # n = input()
-    n = 3
+    n = input()
+    # n = 3
     print_top_line(n)
     if n % 2 == 0:
         print_space_even(n)
     else:
         print_space_odd(n)
+
 
 if __name__ == '__main__':
     main()
