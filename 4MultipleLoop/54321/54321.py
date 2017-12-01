@@ -3,14 +3,11 @@ def input():
 
 
 def answer(n):
-    i = 0
-    while i <= n:
+    for i in range(0, n + 1, 1):
         a_line = ''
-        for j in range(n, 0, -1):
-            if j - i >= 1:
-                a_line += str(j - i)
+        for j in range(n, i, -1):
+            a_line += str(j - i)
         print a_line
-        i += 1
 
 
 def main():
