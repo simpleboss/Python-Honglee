@@ -5,8 +5,14 @@ def input():
 
 
 def grp(n, k):
-    print n
-    print k
+    answer = 0
+    for i in range(1, n+1):
+        sum = 0
+        for j in range(i, i + k):
+            sum += j
+        if j <= n and sum % 15 == 0:
+             answer += 1
+    print answer
 
 
 def main():
