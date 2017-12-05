@@ -28,21 +28,16 @@ def print_chunks(amplitude, line_length=MAX_LINE_LENGTH):
 
             return span
 
+        def build_element(amplitude, y):
+            return build_span(amplitude, y) + '*' + build_span((amplitude - 1), y + (amplitude - 1))
+
         line = ''
+
         while len(line) + (amplitude * 2) <= max_x:
-            line += build_span(amplitude, y) + '*' + build_span((amplitude - 1), y + (amplitude - 1))
+            line += build_element(amplitude, y)
 
-        # Last line
-        line += build_span(min(amplitude, max_x - len(line)), y)
         rest = max_x - len(line)
-        if rest <= 0:
-            return line
-        
-        line += '*'
-        rest -= 1
-
-        if rest <= (amplitude - 1):
-            line += build_span(rest, y + (amplitude - 1))
+        line += build_element(amplitude, y)[:rest]
 
         return line
 
