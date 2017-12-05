@@ -16,4 +16,9 @@ def main():
     electrical_outlets(n, input_list)
 
 
+def test(input_list):
+    print input_list
+
+
 main()
+test()
