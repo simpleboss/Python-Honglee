@@ -4,6 +4,11 @@ MAX_VOLTAGE = 10 # Default MAX_VOLTAGE
 
 def input():
     n = int(raw_input())
+    if n < 1:
+        raise ValueError('input amplitude is too small to draw')
+    if n >= MAX_LINE_LENGTH:
+        raise ValueError('input amplitude is larger than MAX_LINE_LENGTH')
+    return n
 
 
 def build_line(amplitude, y, max_x):
@@ -75,7 +80,8 @@ def test(amplitude, line_length):
 
 
 if __name__ == '__main__':
-    main(4, MAX_LINE_LENGTH)
+    n = input()
+    main(n, MAX_LINE_LENGTH)
     # for line_length in range(MAX_LINE_LENGTH):
     #     n = input()
     #     print 'line_length = {}'.format(line_length)
