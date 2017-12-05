@@ -17,7 +17,7 @@ def main():
 
 
 def test(input_list):
-    print 'commit gichan.lee'
+    print 'commit gichan.lee2'
 
 
 main()
