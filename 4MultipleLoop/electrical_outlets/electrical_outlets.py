@@ -1,8 +1,11 @@
 def input():
-    n = raw_input()
+    n = int(raw_input())
     input_list = []
     for i in range(n):
-        input_list[i].append(int(i) for i in raw_input().split(' '))
+        i = int(i)
+        print i
+        input_list.append([int(i) for i in raw_input().split(' ')])
+        #input_list[i] = []
     return n, input_list
 
 
@@ -11,13 +14,16 @@ def electrical_outlets(n):
 
 
 def main():
-    n = input(raw_input)
+    n = input()
     input_list = input()
     electrical_outlets(n, input_list)
 
 
 def test(input_list):
-    print 'commit gichan.lee5'
+    print 'test'
+    for i in input_list:
+        print 'i', i
+        print input_list[i]
 
 
 main()
