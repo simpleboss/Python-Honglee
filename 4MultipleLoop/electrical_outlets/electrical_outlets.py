@@ -13,9 +13,9 @@ def electrical_outlets(input_list):
     for i in range(n):
         max = 0
         j = 0
-        while j <= len(input_list[i]) - 1:
-            print 'input_list', input_list[i][j]
-            #max += int(input_list[i][j][0]) - 1
+        while j <= len(input_list[i]) - 2:
+            #print 'input_list', input_list[i][j]
+            max += int(input_list[i][j + 1]) - 1
             j += 1
         max += 1
         print max
