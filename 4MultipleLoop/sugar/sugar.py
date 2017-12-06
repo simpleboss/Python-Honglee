@@ -3,6 +3,7 @@ def input():
 
 
 def sugar(n):
+    pass
 
 
 def main():
