@@ -18,8 +18,9 @@ def multofn(n):
             if j_4 != nb and j_3 != nb and j_2 != nb and j_1 != nb:
                 break
             nb += 1
-            print nominate_list[j]
-        if nb == 4:            answer += 1
+            if nb == 4:
+                print 'j =', j
+                answer += 1
     print answer
 
 
