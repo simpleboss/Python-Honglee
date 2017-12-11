@@ -8,30 +8,29 @@ def multofn(n):
     for i in range(1111, 3334):
         if i % n == 0:
             nominate_list.append(i)
-    j_nb = []
-    for j in range(len(nominate_list)):
-        j_nb.append([])
-        j_nb[j].append(nominate_list[j] // 1000)
-        j_nb[j].append(nominate_list[j] // 100 - j_nb[j][0] * 10)
-        j_nb[j].append(nominate_list[j] // 10 - j_nb[j][1] * 10 - j_nb[j][0] * 100)
-        j_nb[j].append(nominate_list[j] - j_nb[j][2] * 10 - j_nb[j][1] * 100 - j_nb[j][0] * 1000)
-        #print 'j_nb[j] =', j_nb[j]
-    for j in range(len(j_nb)):
-        for nb in j_nb[j]:
-            nb123 = 1
-            while nb123 < 4:
-                if nb == nb123:
-                    j_nb[j].append('ok')
+
+    nominates_digits = []
+    for i in range(len(nominate_list)):
+        nominates_digits.append([])
+        nominates_digits[i].append((nominate_list[i] // 1000) % 10)
+        nominates_digits[i].append((nominate_list[i] // 100) % 10)
+        nominates_digits[i].append((nominate_list[i] // 10) % 10)
+        nominates_digits[i].append((nominate_list[i] // 1) % 10)
+        
+    for i in range(len(nominates_digits)):
+        for nominates_digit in nominates_digits[i]:
+            for digit_123 in range(1, 4):
+                if nominates_digit == digit_123:
+                    nominates_digits[i].append('ok')
                     break
-                nb123 += 1
+
     answer_count = 0
-    for j in range(len(j_nb)):
-        answer = -1
-        while answer > -5:
-            if j_nb[j][answer] != 'ok':
-                break
-            answer -= 1
-        if answer == -5:
+    for i in range(len(nominates_digits)):
+        is_all_ok = True
+        for j in range(4):
+            if nominates_digits[i][-j - 1] != 'ok':
+                is_all_ok = False
+        if is_all_ok:
             answer_count += 1
     print answer_count
 
