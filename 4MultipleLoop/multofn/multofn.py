@@ -27,8 +27,8 @@ def multofn(n):
 
 
 def main():
-    # n = input()
-    n = 3
+    n = input()
+    #n = 3
     print multofn(n)
 
 
