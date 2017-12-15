@@ -10,9 +10,9 @@ def amstrong():
     for digits_100 in range(1, 10):
         for digits_10 in range(1, 10):
             for digits_1 in range(1, 10):
-                number = digits_to_number[digits_100, digits_10, digits_1]
+                number = digits_to_number([digits_100, digits_10, digits_1])
                 if number == pow(digits_100, 3) + pow(digits_10, 3) + pow(digits_1, 3):
-                    print digits_100, digits_10, digits_1
+                    print number
 
 
 amstrong()
