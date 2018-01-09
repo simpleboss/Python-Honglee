@@ -16,9 +16,9 @@ def main(v):
         return space
 
     def loop(i):
-        row = []
+        row = ''
         for i in range(2 * v, -1, -1):
-            row.append(front_space(i) + '*' + middle_space(i) + '*')
+            row = row + front_space(i) + '*' + middle_space(i) + '*'
         return row
 
     def tale(i):
