@@ -2,19 +2,18 @@ def input():
     return raw_input()
 
 
-def tri1(n):
-    for i in range(0, n + 1):
+def tri2(n):
+    for j in range(n, 0, -1):
         a_line = ''
-        for j in range(0, i):
+        for i in range(j - 1, -1, -1):
             a_line = a_line + '*'
-            print 'j =', j
+            #print 'i =', i
         print a_line
-    return j
 
 
 def main():
     n = int(input())
-    tri1(n)
+    tri2(n)
 
 
 main()
