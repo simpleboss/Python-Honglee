@@ -24,9 +24,14 @@ def main(v):
     def tale(i):
         pass
 
+    WIDTH = 29
     a_loop = loop(v)
     for i in range(v, 2 * v + 1, 1):
-       print a_loop[i]
+        row_to_print = ''
+        for j in range(WIDTH / len(a_loop[i])):
+            row_to_print += a_loop[i]
+        row_to_print += a_loop[i][0:(WIDTH - len(row_to_print))]
+        print row_to_print
 
 
 v = 6
