@@ -24,9 +24,9 @@ def main(v):
     def tale(i):
         pass
 
-    loop = loop(v)
+    a_loop = loop(v)
     for i in range(v, 2 * v + 1, 1):
-       print loop[i]
+       print a_loop[i]
 
 
 v = 6
