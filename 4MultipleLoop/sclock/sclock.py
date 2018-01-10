@@ -17,16 +17,23 @@ def main(n):
         
         return original_string[:position] + replacing_char + original_string[position + 1:]
 
-    for line_index in range(n):
-        # Build the asterisks segment
-        count_asterisks = n - 2 * line_index
-        if count_asterisks < 0:
-            count_asterisks = -1 * count_asterisks + 2
-        line = '*' * count_asterisks
+    lengths_space = []
+    for i in range(n):
+        lengths_space.append(0)
+    for i in range(n // 2 + 1):
+        lengths_space[i] = i
+        lengths_space[n - i - 1] = i
 
-        # Add spaces at the head
-        count_spaces = (n - count_asterisks) / 2
-        line = ' ' * count_spaces + line
+    for line_index in range(n):
+        length_space = lengths_space[line_index]
+
+        # Build spaces at the head
+        count_spaces = length_space
+        line = ' ' * count_spaces
+
+        # Add the asterisks segment
+        count_asterisks = n - 2 * length_space
+        line += '*' * count_asterisks
 
         # Replace an asterisks with dollar
         line = replace_char_in_str(line, n - line_index - 1, '$')
