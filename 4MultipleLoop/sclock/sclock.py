@@ -3,29 +3,35 @@ def input():
 
 
 def main(n):
-    def print_triangle(is_top):
-        if is_top:
-            space_range = range(0, n // 2 + 1)
-        else:
-            space_range = range(n // 2 - 1, -1, -1)
+    def replace_char_in_str(original_string, position, replacing_char):
+        if type(original_string) is not str:
+            raise TypeError('original_string is not a string.')
+        if type(position) is not int:
+            raise TypeError('position is not an integer.')
+        if type(replacing_char) is not str:
+            raise TypeError('replacing_char is not a string')
+        if position < 0 or position >= len(original_string):
+            raise ValueError('position is out of range.')
+        if len(replacing_char) != 1:
+            raise ValueError('replacing_char is not a string consisting of a single character.')
+        
+        return original_string[:position] + replacing_char + original_string[position + 1:]
 
-        for space in space_range:
-            count_asterisks = n - 2 * space - 1
+    for line_index in range(n):
+        # Build the asterisks segment
+        count_asterisks = n - 2 * line_index
+        if count_asterisks < 0:
+            count_asterisks = -1 * count_asterisks + 2
+        line = '*' * count_asterisks
 
-            line = ''
-            for i in range(count_asterisks):
-                line += '*'
+        # Add spaces at the head
+        count_spaces = (n - count_asterisks) / 2
+        line = ' ' * count_spaces + line
 
-            if is_top:
-                line = line + '$'
-            else:
-                line = '$' + line
+        # Replace an asterisks with dollar
+        line = replace_char_in_str(line, n - line_index - 1, '$')
 
-            for i in range(space):
-                line = ' ' + line
-            print line
-    print_triangle(True)
-    print_triangle(False)
+        print line
 
 
 n = input()
