@@ -13,15 +13,16 @@ def main(n):
             count_asterisks = n - 2 * space - 1
 
             line = ''
-            for i in range(space):
-                line += ' '
-            
-            if not is_top:
-                line += '$'
             for i in range(count_asterisks):
                 line += '*'
+
             if is_top:
-                line += '$'
+                line = line + '$'
+            else:
+                line = '$' + line
+
+            for i in range(space):
+                line = ' ' + line
             print line
     print_triangle(True)
     print_triangle(False)
