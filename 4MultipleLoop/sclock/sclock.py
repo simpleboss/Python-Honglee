@@ -3,23 +3,7 @@ def input():
 
 
 def main(n):
-    def replace_char_in_str(original_string, position, replacing_char):
-        if type(original_string) is not str:
-            raise TypeError('original_string is not a string.')
-        if type(position) is not int:
-            raise TypeError('position is not an integer.')
-        if type(replacing_char) is not str:
-            raise TypeError('replacing_char is not a string')
-        if position < 0 or position >= len(original_string):
-            raise ValueError('position is out of range.')
-        if len(replacing_char) != 1:
-            raise ValueError('replacing_char is not a string consisting of a single character.')
-        
-        return original_string[:position] + replacing_char + original_string[position + 1:]
-
-    lengths_space = []
-    for i in range(n):
-        lengths_space.append(0)
+    lengths_space = [0] * n # Create a list which has length of n
     for i in range(n // 2 + 1):
         lengths_space[i] = i
         lengths_space[n - i - 1] = i
@@ -36,7 +20,8 @@ def main(n):
         line += '*' * count_asterisks
 
         # Replace an asterisks with dollar
-        line = replace_char_in_str(line, n - line_index - 1, '$')
+        dollar_index = n - line_index - 1
+        line = line[:dollar_index] + '$' + line[dollar_index + 1:]
 
         print line
 
