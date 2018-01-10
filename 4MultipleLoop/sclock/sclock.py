@@ -10,14 +10,9 @@ def main(n):
 
     for line_index in range(n):
         length_space = lengths_space[line_index]
+        length_asterisks = n - 2 * length_space
 
-        # Build spaces at the head
-        count_spaces = length_space
-        line = ' ' * count_spaces
-
-        # Add the asterisks segment
-        count_asterisks = n - 2 * length_space
-        line += '*' * count_asterisks
+        line = ' ' * length_space + '*' * length_asterisks
 
         # Replace an asterisks with dollar
         dollar_index = n - line_index - 1
