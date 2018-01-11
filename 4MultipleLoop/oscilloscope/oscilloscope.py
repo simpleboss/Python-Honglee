@@ -31,16 +31,29 @@ def main(input_v):
         return row
 
     row = make_row(input_v)
-    for i in range(2):
+    current_column = 0
+    while current_column < 60 + input_v:
         line_star(row, input_v)
         space_after_line_star(row, input_v)
         stair_star(row, input_v)
         space_after_stair_star(row, input_v)
+        current_column = len(row[1])
 
-    for i in range(len(row) - 1, -1, -1):
+    result = []
+    if input_v >= 10:
+        high_limit = 20 + input_v - 10
+        low_limit = input_v - 10
+        for i in range(low_limit, high_limit + 1):
+            result.append(row[i])
+    else:
+        high_limit = input_v * 2
+        low_limit = -1
+    print len(result)
+    for i in range(20, -1, -1):
         #print i
-        print("".join(str(x) for x in row[i]))
+        print("".join(str(x) for x in result[i][input_v + 1:61 + input_v])),
+        print '| ', i, 'V'
 
 
-input_v = 5
+input_v = 10
 main(input_v)
