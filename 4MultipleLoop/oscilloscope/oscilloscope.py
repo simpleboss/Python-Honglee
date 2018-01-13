@@ -9,35 +9,24 @@ def main(input_v):
             rows.append([''])
         return rows
 
-    def line_star(rows, input_v):
-        for i in range(len(rows)):
-            rows[i] += '*'
+    def line_star_with_following_spaces(row, index, input_v):
+        row.append('*')
+        for i in range(index - 1):
+            row.append(' ')
 
-    def space_after_line_star(rows, input_v):
-        for i in range(1, len(rows), 1):
-            for j in range(i - 1):
-                rows[i] += ' '
-        return rows
-
-    def stair_star(rows, input_v):
-        for i in range(1, len(rows) - 1):
-            rows[i] += '*'
-        return rows
-
-    def space_after_stair_star(rows, input_v):
-        for i in range(len(rows)):
-            for j in range(2 * input_v - i - 1):
-                rows[i] += ' '
-        return rows
-
+    def stair_star_with_following_spaces(row, index, input_v):
+        if index > 0 and (index <= 2 * input_v - 1):
+            row.append('*')
+        for i in range(2 * input_v - index - 1):
+            row.append(' ')
+    
     rows = make_rows(input_v)
-    current_column = 0
-    while current_column < 61 + input_v:
-        line_star(rows, input_v)
-        space_after_line_star(rows, input_v)
-        stair_star(rows, input_v)
-        space_after_stair_star(rows, input_v)
-        current_column = len(rows[1])
+    while len(rows[1]) < 61 + input_v:
+        for row in rows:
+            index = rows.index(row)
+
+            line_star_with_following_spaces(row, index, input_v)
+            stair_star_with_following_spaces(row, index, input_v)
 
     result = []
     if input_v >= 10:
